@@ -1,0 +1,25 @@
+/*-------------------------------- RESET-------------------------------- */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ------------------------------VARIÁVEIS------------------------------ */
+
+:root{
+    /* color */
+    --fundo: #3B3F40;
+    --secundary: #770ABF;
+    --sucess: #03A65A;
+    --warning: #FFAD0D;
+    --danger: #FF280D;
+    --neutrals: #FF280D;
+    --black: #000000;
+    --white: #FFFFFF;
+    --gradiente: linear-gradiente(90deg, var(--#000000), var(--#770ABF));
+
+    /* Tipografia */
+    --ff-opensans: "Open Sans", sans-serif;
+    --ff-oxanium: "Oxanium", sans-serif;
+}
