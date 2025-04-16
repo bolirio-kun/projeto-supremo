@@ -1,5 +1,7 @@
 /*-------------------------------- RESET-------------------------------- */
-*{
+*,
+*::before,
+*::after{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,9 +19,227 @@
     --neutrals: #FF280D;
     --black: #000000;
     --white: #FFFFFF;
-    --gradiente: linear-gradiente(90deg, var(--#000000), var(--#770ABF));
+    --text: hsla(0, 0%, 87%, 1);
+
+    --gradiente: linear-gradient(179deg,transparent 0%,#000000,#770ABF 50%,transparent 100%);
 
     /* Tipografia */
     --ff-opensans: "Open Sans", sans-serif;
     --ff-oxanium: "Oxanium", sans-serif;
+
+    --fs-1: 3.6rem;
+    --fs-2: 2.4rem; 
+    --fs-3: 2rem;
+    --fs-4: 1.7rem;
+    --fs-5: 1.6rem;
+    --fs-6: 1.5rem;
+    --fs-7: 1.4rem;
+    --fs-8: 1.2rem;
+
+    --weight-regular: 400;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+
+    /* espaço */
+    --section-spacing: 60px;
+    
+    /* borda */
+
+    --border: hsl(240, 45%, 17%);
+    --border-30: hsla(267, 100%, 63%, 0.3);
+
+    /* border radius */
+    --radius--circle: 50%;
+    --radius-5: 5px;
+    --radius-3: 3px;
+
+      /*==== transição ====*/
+  --transition-1: 250ms ease;
+  --transition-2: 500ms ease;
+  --cubic-out: cubic-bezier(0.05, 0.83, 0.52, 0.97);
+
+  /*==== clip path ====*/
+  --clip-path-1: polygon(0 0, 100% 0, 100% 0, 0 0);
+  --clip-path-2: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  --clip-path-3: polygon(0% 0%, 90% 0, 100% 30%, 100% 100%, 0 100%);
+  --clip-path-4: polygon(90% 0, 100% 40%, 100% 100%, 0 100%, 0 0);
+  --clip-path-5: polygon(100% 0, 100% 100%, 10% 100%, 0 60%, 0 0);
+  --clip-path-6: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 40%);
+  --clip-path-7: polygon(100% 0, 100% 60%, 90% 100%, 0 100%, 0 0);
+  --clip-path-8: polygon(0% 0%, 70% 0, 100% 30%, 100% 100%, 0 100%);
+  --clip-path-9: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+  }
+
+  li {
+    list-style: none;
+  }
+  
+  a,
+  img,
+  span,
+  input,
+  button,
+  textarea,
+  ion-icon {
+    display: block;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  img {
+    height: auto;
+  }
+  
+  input,
+  button,
+  textarea {
+    background: none;
+    border: none;
+    font: inherit; /*herda da div pai*/
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+  }
+  
+  ion-icon {
+    pointer-events: none;
+  }
+  
+  address {
+    font-size: 10px;
+    scroll-behavior: smooth;
+  }
+  body{
+    background-color: var(--fundo);
+    color: var(--text);
+    font-family: var(--ff-oxanium);
+    font-size: var(--weight-regular);
+    line-height: 1.6;
+    overflow-x: hidden;
+    height: 1000px;
+  }
+
+  /* CSS reutilizavel */
+  .container{  
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;   /* 16px */
+
+  }
+
+  .btn{
+    position: relative;
+    background: var(--gradiente);
+    color: var(--text);
+    font-size: var(--fs-8);
+    font-weight: var(--ff-oxanium);
+    max-width: 120px;
+    height: 50px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 30px;
+    clip-path: var(--clip-path-3);
+  }
+
+  .btn:hover{
+    transform: scale(1.05);
+  }
+    
+  /* HEADER */
+  .logo img{
+    width: 160px;
+    height:  auto;
+    object-fit: contain;
+    display: block;
+  }
+
+
+.header{
+    background-color: #1A1A1A;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 12px; 
+    z-index: 4;
+}
+
+.header .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-list{
+  display: flex;
+}
+
+.header.active{
+  position: fixed;
+  animation: slideUP 1s ease forwards;
+}
+
+@keyframes slideUP {
+  0%{
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.navbar-link{
+  padding: 12px 25px;
+  text-transform: uppercase;
+  font-size: var(--fs-8);
+  font-weight: var(--weight-semibold);
+  color: var(--text);
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover{
+  color: var(--secundary);
+}
+
+.search-btn{
+  color: var(--text);
+  font-size: var(--fs-8);
+}
+
+.search-btn:hover{
+  transform: scale(1.2);
+  color: var(--secundary);
+}
+
+/* BANNER */
+.banner{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  /* background: url("../img/banner.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+   */
+
+}
+
+.banner video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <!-- metatags -->
     <meta charset="UTF-8">
@@ -7,14 +8,70 @@
 
     <title>Super-Villains</title>
 
+    <!-- favcon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <!-- links -->
     <link rel="stylesheet" href="/projeto-supremo/css/atyle.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oxanium:wght@200..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oxanium:wght@200..800&display=swap"
+        rel="stylesheet">
+
+        <!-- preload -->
+         <link rel="preload" href="img/banner.png">
+
 
 </head>
+
 <body>
+    <!-- header -->
+    <header class="header active">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="img/logo.png" alt=""></a>
+            
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li>
+                        <a href="#" class="navbar-link">home</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="#" class="navbar-link">viloes</a>
+                    </li>
+                    <li>
+                    <a href="#" class="navbar-link">coming soon</a>
+                </li>
+                <li>
+                    <a href="#" class="navbar-link">contato</a>
+                </li>
+            </ul>
+        </nav>
+
+        <a href="#" class="btn">entrar</a>
+
+        <button class="nav-toggle-btn" aria-label="menu mobile">
+            <ion-icon name="search-outline"></ion-icon>
+        </button>
+
+    </div>
+
+    </header>
+
+    <!-- banner -->
+     <section class="banner">
+        <video autoplay muted loop>
+            <source src="videos/sapo.mp4">
+        </video>
+     </section>
     
+    
+    <!-- js -->
+    <script src="js/script.js"></script>
+
+    <!-- ion icon -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
+
 </html>
