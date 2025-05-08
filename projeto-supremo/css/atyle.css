@@ -415,3 +415,96 @@
 .content{
   max-width: 800px;
 }
+
+/* GALERIA */
+.galeria{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.galeria img{
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+  transition: tranform 0.4s ease, filter 0.4s ease;
+  filter: grayscale(100%);
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+.produto .section-title{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#viloes,
+#prod{
+  scroll-margin-top: 200px;
+}
+
+/* botão topo */
+.back-top-btn{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-image: var(--gradiente);
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  font-size: var(--fs-6);
+  z-index: 10;
+  clip-path: var(--clip-path-8);
+  transition: var(--transition-1);
+}
+
+.back-top-btn:hover{
+  transform: translateY(-20px);
+}
+
+/* footer */
+.footer{
+  background-color: black;
+  background-position: center;
+  background-size: cover;
+}
+
+.footer-top .container-footer{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
+  max-width: 100%;
+  font-size: var(--fs-8);
+}
+
+.footer-brand .footer-text{
+ margin-block: 20px 25px;
+}
+
+.footer-brand .social-list{
+  display: flex;
+  gap: 10px;
+}
+
+.footer .social-link{
+  background-color: var(--secundary);
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  transition: var(--transition-1);
+  border-radius: 100px;
+}
+
+.footer .social-link:hover{
+  background-color: var(--secundary);
+  transform: translateY(-2px);
+}
